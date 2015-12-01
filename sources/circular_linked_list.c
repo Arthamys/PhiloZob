@@ -5,40 +5,49 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Wed Nov 25 14:16:46 2015 Galilee Enguehard
-** Last update Thu Nov 26 16:11:20 2015 Galilee Enguehard
+** Last update Tue Dec  1 14:25:27 2015 Galilee Enguehard
 */
 
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "philozob.h"
 
 static void	init_node(t_threads *node)
 {
-  node->left = NULL;
-  node->right = NULL;
+  memset(node, 0, sizeof(*node));
   node->rice_left = RICE_GRAINS;
   node->state = RESTING;
   node->chop = AVAILABLE;
 }
 
-int		create_first_node(t_control *ctrl)
+int		create_first_node(t_control **ctrl)
 {
   t_threads	*new;
 
-  if ((ctrl = malloc(sizeof(t_control))) == NULL ||
+  if ((*ctrl = malloc(sizeof(t_control))) == NULL ||
       ((new = malloc(sizeof(t_threads))) == NULL))
-    return (EXIT_FAILURE);
+    {
+      fprintf(stderr, "%s\n", ERROR_MALLOC);
+      return (EXIT_FAILURE);
+    }
   init_node(new);
-  ctrl->head = new;
-  ctrl->tail = new;
+  (*ctrl)->head = new;
+  (*ctrl)->tail = new;
+  new->right = (*ctrl)->head;
+  new->left = (*ctrl)->tail;
   return (EXIT_SUCCESS);
 }
 
-int		add_right_node(t_control *ctrl)
+int		add_right_node(t_control * const ctrl)
 {
   t_threads	*new;
 
   if ((new = malloc(sizeof(t_threads))) == NULL)
-    return (EXIT_FAILURE);
+    {
+      fprintf(stderr, "%s\n", ERROR_MALLOC);
+      return (EXIT_FAILURE);
+    }
   init_node(new);
   new->left = ctrl->tail;
   new->right = ctrl->head;

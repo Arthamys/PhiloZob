@@ -5,7 +5,7 @@
 ## Login   <engueh_a@epitech.net>
 ##
 ## Started on  Wed Nov 25 11:04:13 2015 Galilee Enguehard
-## Last update Wed Nov 25 11:13:47 2015 Galilee Enguehard
+## Last update Tue Dec  1 12:46:14 2015 Galilee Enguehard
 ##
 
 CC	= gcc
@@ -15,8 +15,14 @@ NAME	= PhiloZob
 CFLAGS	+= -W -Wall -Werror -Wextra
 CFLAGS	+= -Iinclude
 
+LDFLAGS	= -lpthread
+
 SRCS	= sources/main.c			\
-	 sources/create_threads.c
+	sources/create_threads.c		\
+	sources/assign_thread.c			\
+	sources/circular_linked_list.c		\
+	sources/free_linked_list.c		\
+	sources/start_routine.c
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -26,7 +32,7 @@ PRINTF	= @printf
 all: $(NAME)
 
 $(NAME) : $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+	$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
 	$(PRINTF) '\033[1;32m> Compiled\033[0m\n'
 
 clean:
