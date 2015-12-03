@@ -5,11 +5,10 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Mon Nov 30 17:49:58 2015 Galilee Enguehard
-** Last update Tue Dec  1 14:23:36 2015 Galilee Enguehard
+** Last update Tue Dec  1 16:49:40 2015 Galilee Enguehard
 */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "philozob.h"
 
 void		free_linked_list(t_control *control)

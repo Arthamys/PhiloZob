@@ -5,7 +5,7 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Wed Nov 25 11:15:30 2015 Galilee Enguehard
-** Last update Tue Dec  1 16:29:23 2015 Galilee Enguehard
+** Last update Thu Dec  3 14:18:24 2015 Galilee Enguehard
 */
 
 #ifndef PHILOZOB_H_
@@ -15,8 +15,11 @@
 # define EAT_TIME		7000
 # define THINK_TIME		10000
 # define RICE_GRAINS		100
+# define LOW_ID(x, y)		(x) > (y) ? (y) : (x)
 # define ERROR_MALLOC		"Could not allocate memory.\n"
 # define ERROR_CR_THREAD	"Could not create thread.\n"
+# define EROOR_MUTEX_XLOCK1	"There was an error "
+# define ERROR_MUTEX_XLOCK2	"in a mutex locking/unlocking operation."
 
 typedef enum		e_state
   {
@@ -27,16 +30,24 @@ typedef enum		e_state
 
 typedef enum		e_chop_state
   {
+    DIRTY = 0,
+    CLEAN
+  }			t_chop_state;
+
+typedef enum		e_chop
+  {
     AVAILABLE = 0,
     UNAVAILABLE
-  }			t_chop_state;
+  }			t_chop;
 
 typedef struct		s_threads
 {
   struct s_threads	*left;
   void			*thread; //pthread_t *
+  void			*chop_mutex; //pthread_mutex_t *
   int			th_id;
-  t_chop_state		chop;
+  t_chop		chop;
+  t_chop_state		chop_state;
   t_state		state;
   int			rice_left;
   struct s_threads	*right;

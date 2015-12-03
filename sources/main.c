@@ -5,11 +5,9 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Wed Nov 25 11:09:47 2015 Galilee Enguehard
-** Last update Tue Dec  1 14:03:40 2015 Galilee Enguehard
+** Last update Tue Dec  1 16:50:07 2015 Galilee Enguehard
 */
 
-#include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
 #include <pthread.h>
 #include "philozob.h"

@@ -5,10 +5,9 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Wed Nov 25 11:13:58 2015 Galilee Enguehard
-** Last update Tue Dec  1 14:25:08 2015 Galilee Enguehard
+** Last update Thu Dec  3 14:19:50 2015 Galilee Enguehard
 */
 
-#include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
 #include "philozob.h"
@@ -21,7 +20,7 @@ int		thread_init(t_control * const control)
   while (i < NB_PHIL)
     {
       if (pthread_create((pthread_t *)tmp->thread, NULL, start_routine,
-			 (void *)control))
+			 (void *)tmp))
 	return (EXIT_FAILURE);
       tmp = tmp->right;
       ++i;

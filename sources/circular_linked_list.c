@@ -5,7 +5,7 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Wed Nov 25 14:16:46 2015 Galilee Enguehard
-** Last update Tue Dec  1 14:25:27 2015 Galilee Enguehard
+** Last update Thu Dec  3 11:53:26 2015 Galilee Enguehard
 */
 
 #include <stdlib.h>
@@ -19,6 +19,7 @@ static void	init_node(t_threads *node)
   node->rice_left = RICE_GRAINS;
   node->state = RESTING;
   node->chop = AVAILABLE;
+  node->chop_state = DIRTY;
 }
 
 int		create_first_node(t_control **ctrl)
