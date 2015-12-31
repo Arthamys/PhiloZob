@@ -5,7 +5,7 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Wed Dec 30 23:51:29 2015 Galilee Enguehard
-** Last update Thu Dec 31 05:13:51 2015 Galilee Enguehard
+** Last update Thu Dec 31 16:08:24 2015 Galilee Enguehard
 */
 
 #include <unistd.h>
@@ -45,6 +45,7 @@ void		*display_thread_states(void *philosopher_array)
   t_philo	*tmp;;
   int		i;
 
+  system("clear");
   while (all_have_spaghetti(philosopher_array))
     {
       i = 0;
@@ -56,7 +57,8 @@ void		*display_thread_states(void *philosopher_array)
 	  tmp = tmp->next;
 	}
       sleep(INTERLUDE);
-      system("clear");
+      printf("\n\n\n\n");
     }
+  printf("All have now eaten their spaghetti.\n");
   return (NULL);
 }

@@ -5,7 +5,7 @@
 ** Login   <engueh_a@epitech.net>
 **
 ** Started on  Wed Nov 25 11:15:30 2015 Galilee Enguehard
-** Last update Thu Dec 31 05:23:33 2015 Galilee Enguehard
+** Last update Thu Dec 31 16:10:53 2015 Galilee Enguehard
 */
 
 #ifndef PHILOZOB_H_
