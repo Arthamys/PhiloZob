@@ -5,7 +5,7 @@
 ## Login   <engueh_a@epitech.net>
 ##
 ## Started on  Wed Nov 25 11:04:13 2015 Galilee Enguehard
-## Last update Tue Dec  1 12:46:14 2015 Galilee Enguehard
+## Last update Thu Dec 31 04:37:26 2015 Galilee Enguehard
 ##
 
 CC	= gcc
@@ -18,11 +18,8 @@ CFLAGS	+= -Iinclude
 LDFLAGS	= -lpthread
 
 SRCS	= sources/main.c			\
-	sources/create_threads.c		\
-	sources/assign_thread.c			\
-	sources/circular_linked_list.c		\
-	sources/free_linked_list.c		\
-	sources/start_routine.c
+	sources/display.c			\
+	sources/actions.c
 
 OBJS	= $(SRCS:.c=.o)
 
